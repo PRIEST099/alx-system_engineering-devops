@@ -17,4 +17,6 @@ the file 7-movethatfile is a script that moves a file in tmp to tmp/my_first_dir
 the file 8-firstdelete is a script that deletes a file in tmp
 
 
+the file 9-firstdirdeletion ia a script that deletes a directory in tmp
+
 
