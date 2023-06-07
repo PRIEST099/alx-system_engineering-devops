@@ -22,4 +22,7 @@ the file 9-firstdirdeletion ia a script that deletes a directory in tmp
 
 the file 10-back is a script that changes the directory to the precious directory
 
+the file 11-lists is a script that lists all files (even ones with names beginning with a period character, which are normally hidden) in the current directory and the parent of the working directory and the /boot directory (in this order), in long format.
+
+
 
