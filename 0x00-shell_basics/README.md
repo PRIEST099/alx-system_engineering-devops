@@ -19,6 +19,4 @@ the file 8-firstdelete is a script that deletes a file in tmp
 
 the file 9-firstdirdeletion ia a script that deletes a directory in tmp
 
-the file 10-back is a script that moves to the previous directory
-
 
