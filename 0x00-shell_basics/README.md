@@ -11,4 +11,7 @@ the file 5-listfilesdigitonly is a script that displays current directory conten
 
 the file 6-firstdirectory is a script that creates a new directory in tmp
 
+the file 7-movethatfile is a script that moves a file in tmp to tmp/my_first_directory
+
+
 
