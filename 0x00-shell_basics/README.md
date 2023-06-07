@@ -9,4 +9,6 @@ the file 4-listmorefiles is a script that displays current directory contents, i
 
 the file 5-listfilesdigitonly is a script that displays current directory contents in a long format with hidden files and user groups
 
+the file 6-firstdirectory is a script that creates a new directory in tmp
+
 
