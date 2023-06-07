@@ -4,4 +4,4 @@ the file 1-listit is a script that displays the content of the current directory
 
 the file 3-listfiles is a script that displays current directory contents in a long format
 
-
+the file 4-listmorefiles is a script that displays current directory contents, including hidden files and it uses the long format
