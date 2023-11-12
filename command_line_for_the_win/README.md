@@ -1,13 +1,10 @@
-Certainly! Below is the README markdown code:
-
-```markdown
 # Command Line Challenge Solutions
 
 This README provides solutions to the command line challenges along with explanations of how the commands are used.
 
 ## 1. Print "hello world" on the terminal
 
-```bash
+```code
 echo "hello world"
 ```
 
@@ -256,10 +253,6 @@ cat ps-ef1 ps-ef2 | sort -k2,2n | uniq
 ```bash
 grep -oP '(\d+\.\d+\.\d+\.\d+:\d+)' netstat.out | sort -t . -k 1,1nr -k 2,2nr -k 3,3nr -k 4,4nr -k 5,5n
 ```
-
+```code
 Feel free to copy and paste these commands into your terminal for the specified challenges.
 ```
-
-
-
-This markdown file provides a clear and concise overview of the commands to solve each challenge and includes comments for better understanding.
