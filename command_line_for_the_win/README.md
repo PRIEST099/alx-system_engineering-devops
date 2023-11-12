@@ -1,6 +1,3 @@
-Great! Assuming the target directory is `/root/alx-system_engineering-devops/command_line_for_the_win/`, let's update the markdown with the correct path:
-
-```markdown
 # File Transfer Using SFTP
 
 ## Overview
