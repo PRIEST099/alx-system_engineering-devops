@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a bash script that showcases the use of read to read content of a file separately
+file="/etc/passwd"
+if [ ! -e "$file" ]; then
+	echo "Error: $file not found"
+	exit
+fi
+
+while IFS=: read -r username _ uid _ _ home _; do
+	printf "%s:%s:%s\n" "$username" "$uid" "$home"
+done < "$file"
