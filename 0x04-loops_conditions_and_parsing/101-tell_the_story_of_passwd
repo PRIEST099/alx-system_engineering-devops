@@ -8,6 +8,6 @@ fi
 
 while IFS=: read -r username pass uid gid uinfo home cmd; do
 	printf "The user %s is part of the %s gang, " "$username" "$gid"
-	printf "lives in %s and rides %s. %s's place is protected" "$home" "$cmd"
+	printf "lives in %s and rides %s. %s's place is protected" "$home" "$uid" "$cmd"
 	printf " by the passcode %s, more info about the user here: %s\n" "$pass" "$uinfo"
 done < "$file"
