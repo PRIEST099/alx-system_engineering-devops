@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# a bash script  that displays the visitor IP along with the HTTP status code from the Apache log file.
+
+file="apache-access.log"
+if [ ! -e "$file" ]; then
+	echo "Error: $file not found"
+	exit
+fi
+awk '{print $1 " " $9}' "$file" | sort | uniq -c | sort -rn
