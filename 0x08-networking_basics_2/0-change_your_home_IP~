@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# a bash script to edit /etc/hosts file in place
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2
