@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# handles route redirection
+
+apt-get -y update -qq && \
+	apt-get -y install nginx
+
+service start nginx
+ufw allow 'Nginx HTTP'
+
+cp /var/www/html/index.nginx-debian.html /var/www/html/index-nginx-debian.html.bckp
+
+echo -e "Hello world!" > /var/www/html/index.nginx-debian.html
+
+
+sudo sed -i '24i\       rewrite ^/redirect_me https://www.google.com permanent;' /etc/nginx/sites-available/default
+
+sudo sed -i '25i\	error_page 404 /error_404.html;' /etc/nginx/sites-available/default
+
+service nginx restart
