@@ -1,8 +1,18 @@
 #!/usr/bin/env bash
 # puppet code to add config file
 
-file { 'ssh_config':
-path    => '/etc/ssh/ssh_config'
-ensure  => present,
-content => "Host *\n\tPasswordAuthentication no\n\tIdentityFile ~/.ssh/school\n\t SendEnv LANG LC_*\n\t HashKnownHosts yes\n\tGSSAPIAuthentication yes"
+file { '/etc/ssh/ssh_config':
+ensure  => present
+}
+
+file_line { 'Disabling password auth':
+path  => '/etc/ssh/ssh_config',
+line  => 'PasswordAuthentication no',
+match => '^#PasswordAuthentication'
+}
+
+file_line { 'Custom Identity File':
+path  => '/etc/ssh/ssh_config',
+line  => 'IdentityFile ~/.ssh/school',
+match => '^#IdentityFilei'
 }
