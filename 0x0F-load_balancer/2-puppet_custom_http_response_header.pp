@@ -4,8 +4,7 @@
 package {'nginx':
   ensure => installed
 }
-
-file { '/var/www/hmtl':
+file { '/var/www/html':
   ensure => directory
 }
 
