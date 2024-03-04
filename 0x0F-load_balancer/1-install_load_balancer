@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#configuring haproxy to our requirements
+sudo apt-get -y install haproxy
+
+echo 'ENABLED=1' | sudo tee -a /etc/default/haproxy
+
+cat << EOT | sudo tee -a /etc/haproxy/haproxy.cfg
+
+backend ahadi.tech_backend
+	timeout connect 3000
+	timeout server 30000
+	balance roundrobin
+	server 64688-web-01 54.208.97.204 check 
+	server 64688-web-01 54.165.40.42 check
+
+frontend ahadi.tech
+	timeout client 30000
+	bind 0:80
+	default_backend ahadi.tech_backend
+EOT
+
+sudo service haproxy restart
