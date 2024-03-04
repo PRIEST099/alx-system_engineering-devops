@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# a bash script to use load balancer to configure nginx
+bash -c "echo "server {
+	location / {
+		add_header X-Served-By $hostname;
+	}
+}"
