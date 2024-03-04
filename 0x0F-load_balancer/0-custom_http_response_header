@@ -1,7 +1,12 @@
 #!/usr/bin/env bash
 # a bash script to use load balancer to configure nginx
-bash -c "echo "server {
+apt-get update
+apt-get -y install nginx
+
+bash -c 'echo "server {
 	location / {
 		add_header X-Served-By $hostname;
 	}
-}"
+}" > /etc/nginx/sites-available/default'
+
+service nginx restart
