@@ -4,6 +4,9 @@
 package {'nginx':
   ensure => installed
 }
+file {'/var/www':
+  ensure => directory
+}
 file { '/var/www/html':
   ensure => directory
 }
