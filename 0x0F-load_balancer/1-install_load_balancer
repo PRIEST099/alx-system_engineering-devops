@@ -11,7 +11,7 @@ backend ahadi.tech_backend
 	timeout server 30000
 	balance roundrobin
 	server 64688-web-01 54.208.97.204 check 
-	server 64688-web-01 54.165.40.42 check
+	server 64688-web-02 54.165.40.42 check
 
 frontend ahadi.tech
 	timeout client 30000
