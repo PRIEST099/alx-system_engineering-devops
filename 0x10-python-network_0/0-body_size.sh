@@ -8,4 +8,4 @@ fi
 
 link=$1
 header_response=$(curl -sI "$link")
-echo "$header_response" | grep -i '^Content-length:' | awk '{print $2}' | tr -d "\r\n"
+echo "$header_response" | grep -i '^Content-length:' | awk '{print $2}' | tr -d "\r"
