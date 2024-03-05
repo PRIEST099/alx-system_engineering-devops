@@ -1,50 +1,30 @@
-#!/usr/bin/env bash
-# installs nginx with puppet and configures it with the reqs
+# Setup New Ubuntu server with nginx
+# and add a custom HTTP header
 
-package {'nginx':
-  ensure => installed
+exec { 'update system':
+        command => '/usr/bin/apt-get update',
 }
-file {'/var/www':
-  ensure => directory
-}
-file { '/var/www/html':
-  ensure => directory
+
+package { 'nginx':
+	ensure => 'installed',
+	require => Exec['update system']
 }
 
 file {'/var/www/html/index.html':
-  ensure  => present,
-  content => 'Hello World!'
+	content => 'Hello World!'
 }
 
-file {'/var/www/html/404.html':
-  ensure  => present,
-  content => "Ceci n'est pas une page"
+exec {'redirect_me':
+	command => 'sed -i "24i\	rewrite ^/redirect_me https://th3-gr00t.tk/ permanent;" /etc/nginx/sites-available/default',
+	provider => 'shell'
 }
 
-file {'/etc/nginx/sites-available/default':
-  ensure  => present,
-  content => '
-   server {
-    listen 80 default_server;
-    listen [::]:80 default_server;
-    add_header X-Served-By $hostname;
-    root /var/www/html;
-    index index.html index.htm;
-
-    location /redirect_me {
-      return 301 https://github.com/priest099;
-    }
-    error_page 404 /404.html;
-    location /404 {
-      root /var/www/html;
-      internal;
-    }
-}',
+exec {'HTTP header':
+	command => 'sed -i "25i\	add_header X-Served-By \$hostname;" /etc/nginx/sites-available/default',
+	provider => 'shell'
 }
 
 service {'nginx':
-  ensure  => running,
-  enable  => true,
-  require => File['/etc/nginx/sites-available/default'],
+	ensure => running,
+	require => Package['nginx']
 }
-
