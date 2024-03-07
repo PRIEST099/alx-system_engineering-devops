@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# a script that installs nginx in silent mode
+sudo apt-get update
+sudo apt-get install nginx
