@@ -40,7 +40,7 @@ symbolic-links=0
 server-id       = 2
 
 # Base name and location of MYSQL's binary log file
-log_bin         = /var/log/mysql/mysql-bin.log
+log_bin         = /var/log/mysql/mysql-bin-2.log
 
 # name of the database to replicate
 binlog_do_db    = tyrell_corp
