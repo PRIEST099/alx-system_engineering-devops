@@ -36,11 +36,12 @@ log-error       = /var/log/mysql/error.log
 # Disabling symbolic-links is recommended to prevent assorted security risks
 symbolic-links=0
 
+
 # an identifier to distinguish servers in a replication setup
 server-id       = 1
 
 # Base name and the location of MYSQL's binary log file
-log_bin         = /var/log/mysql/mysql-bin-1.log
+log_bin         = /var/log/mysql/mysql-bin.log
 
 # name of database to replicate
 binlog_do_db    = tyrell_corp
