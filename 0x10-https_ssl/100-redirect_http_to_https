@@ -6,7 +6,12 @@ defaults
   timeout server 15s
   timeout http-request 10s
 
-frontend ahadi.tech_frontend
+frontend ahadi.tech_frontend_http
+    bind *:80
+    mode http
+    redirect scheme https code 301 if !{ ssl_fc }
+
+frontend ahadi.tech_frontend_https
     bind *:443 ssl crt /etc/ssl/private/www.ahadi.tech.pem
     mode http
     default_backend ahadi.tech_backend

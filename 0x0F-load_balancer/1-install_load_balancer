@@ -40,8 +40,8 @@ frontend ahdai.tech_frontend
 
 backend ahadi.tech_backend
     balance roundrobin
-    server 64688-web-01 54.208.97.204:80 check
-    server 64688-web-02 54.165.40.42:80 check
+    server 64688-web-01 54.160.79.75:80 check
+    server 64688-web-02 54.234.59.199:80 check
 "
 
 # shellcheck disable=SC2154

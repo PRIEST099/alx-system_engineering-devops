@@ -1,5 +1,5 @@
 <div class="gap formatted-content">
-    <p>&nbsp;⚠️ <strong>Before going through the guide try this command if it gonna install MySQL 5.7 correctly, when you see the white windows you can jump to step 9, and see what to choose :</strong> </p>
+    <p>&nbsp;⚠️ <strong> HEY! Before going through the guide try this command if it gonna install MySQL 5.7 correctly, when you see the white windows you can jump to step 9, and see what to choose :</strong> </p>
 
 <pre><code> sudo wget -O mysql57 https://raw.githubusercontent.com/nuuxcode/alx-system_engineering-devops/master/scripts/mysql57 &amp;&amp; sudo chmod +x mysql57 &amp;&amp;  sudo ./mysql57
 </code></pre>
